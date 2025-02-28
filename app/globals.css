@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --repmax-yellow: #F7A800;
+  --repmax-black: #000000;
+  --repmax-white: #FFFFFF;
+}
+
+@layer base {
+  :root {
+    --background: var(--repmax-white);
+    --foreground: var(--repmax-black);
+    --card: var(--repmax-white);
+    --card-foreground: var(--repmax-black);
+    --popover: var(--repmax-white);
+    --popover-foreground: var(--repmax-black);
+    --primary: var(--repmax-yellow);
+    --primary-foreground: var(--repmax-black);
+    --secondary: var(--repmax-black);
+    --secondary-foreground: var(--repmax-white);
+    --muted: var(--repmax-black);
+    --muted-foreground: var(--repmax-white);
+    --accent: var(--repmax-yellow);
+    --accent-foreground: var(--repmax-black);
+    --destructive: #FF4444;
+    --destructive-foreground: var(--repmax-white);
+    --border: var(--repmax-black);
+    --input: var(--repmax-black);
+    --ring: var(--repmax-yellow);
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: var(--repmax-black);
+    --foreground: var(--repmax-white);
+    --card: var(--repmax-black);
+    --card-foreground: var(--repmax-white);
+    --popover: var(--repmax-black);
+    --popover-foreground: var(--repmax-white);
+    --primary: var(--repmax-yellow);
+    --primary-foreground: var(--repmax-black);
+    --secondary: var(--repmax-white);
+    --secondary-foreground: var(--repmax-black);
+    --muted: var(--repmax-white);
+    --muted-foreground: var(--repmax-black);
+    --accent: var(--repmax-yellow);
+    --accent-foreground: var(--repmax-black);
+    --destructive: #FF4444;
+    --destructive-foreground: var(--repmax-white);
+    --border: var(--repmax-white);
+    --input: var(--repmax-white);
+    --ring: var(--repmax-yellow);
+  }
+
+  body {
+    @apply font-sans;
+  }
+}
+
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee2 {
+  animation: marquee 25s linear infinite;
+  animation-delay: 12.5s;
+}
+
+.embla {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+}
+
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
